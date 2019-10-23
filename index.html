@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Happy Diwali @NakulTanta</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ::-moz-selection {
+            /* Code for Firefox */
+            color: #fff;
+            background: #000;
+        }
+
+        ::selection {
+            color: #FFF;
+            background: #000;
+        }
+
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:900&display=swap');
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1;
+            letter-spacing: -2px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+            padding: 15px;
+            background: #000;
+        }
+
+        h1 {
+            font-size: 15vw;
+            text-align: center;
+            color: transparent;
+            text-transform: uppercase;
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: black;
+            letter-spacing: 10px;
+            
+        }
+        
+        h1 span {
+            transition: all 0.2s ease;
+        }
+        
+        h6 {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h6>happy diwali</h6>
+    <h1></h1>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script>
+        var str = $('h6').text();
+        var arr = str.split("");
+        $.each(arr, function(index, element){
+            $('h1').append('<span id="s'+index+'">' + element + '</span>');
+            window.setInterval(function(){
+            var randomColor = Math.floor(Math.random()*16777215).toString(16);
+            $( "#s" +index+ "").css('-webkit-text-stroke-color',  ' #'+ randomColor + ' ' );
+            }, 100);
+        })
+    </script>
+</body>
+</html>
